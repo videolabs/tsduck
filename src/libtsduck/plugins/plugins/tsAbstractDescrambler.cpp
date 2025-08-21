@@ -20,6 +20,7 @@
 ts::AbstractDescrambler::AbstractDescrambler(TSP* tsp_, const UString& description, const UString& syntax, size_t stack_usage) :
     ProcessorPlugin(tsp_, description, syntax),
     _stack_usage(stack_usage)
+    ,_ecm_thread(this)
 {
     // We need to define character sets to specify service names.
     duck.defineArgsForCharset(*this);

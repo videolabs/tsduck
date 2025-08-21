@@ -253,7 +253,7 @@ namespace ts {
         ScrambledStreamMap      _scrambled_streams {};        // Scrambled streams, indexed by PID.
         std::mutex              _mutex {};                    // Exclusive access to protected areas
         std::condition_variable _ecm_to_do {};                // Notify thread to process ECM.
-        ECMThread               _ecm_thread {this};           // Thread which deciphers ECM's.
+        ECMThread               _ecm_thread;                  // Thread which deciphers ECM's.
         // -- start of protected area --
         bool                    _stop_thread = false;         // Terminate ECM processing thread
         // -- end of protected area --
